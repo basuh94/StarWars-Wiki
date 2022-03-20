@@ -1,0 +1,55 @@
+body {
+    background-color: #ecf0f1;
+    margin: 0;
+}
+
+.flex-conatiner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.p-datatable .p-datatable-thead>tr>th {
+    text-align: left;
+    padding: 1rem 1rem;
+    border: 1px solid #000000;
+    border-width: 0 0 1px 0;
+    font-weight: 700;
+    color: #ffffff;
+    background: #2f2f2f;
+    transition: box-shadow 0.2s;
+}
+
+.logo {
+    width: 300px;
+}
+
+.card {
+    box-shadow: -1px 13px 30px #888888;
+}
+
+.characters-img {
+    width: 50px;
+    border-radius: 100%;
+}
+
+.films-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.p-dialog .p-dialog-content {
+    background-color: #ecf0f1;
+}
+
+.p-dialog .p-dialog-footer {
+    padding: 1.5rem;
+}
+
+.p-dialog .p-dialog-header {
+    background-color: #2f2f2f !important;
+    color: #fff;
+}

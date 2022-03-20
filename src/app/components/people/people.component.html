@@ -1,0 +1,73 @@
+<div class="header-box">
+    <div class="logo-container">
+        <img class="logo" src="../../../assets/img/logo.png">
+    </div>
+</div>
+
+<div class="flex-conatiner">
+    <p-progressSpinner *ngIf="spinner" [style]="{width: '50px', height: '50px'}" strokeWidth="8" animationDuration=".5s"></p-progressSpinner>
+    <div *ngIf="!spinner" class="card table-box">
+        <p-table #dt1 [globalFilterFields]="['name', 'height', 'mass', 'hair_color', 'skin_color', 'eye_color', 'birth_year', 'gender']" [value]="people" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [rowsPerPageOptions]="[10, 25, 50]">
+
+            <ng-template pTemplate="caption">
+                <div class="flex">
+                    <input type="text" pInputText id="search" class="search-input-text" [(ngModel)]="search" (keyup.enter)="dt1.filterGlobal(search, 'contains')" placeholder="Buscar..." />
+                    <button class="btn-search" (click)="dt1.filterGlobal(search, 'contains')">Buscar</button>
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Height</th>
+                    <th>Mass</th>
+                    <th>Hair Color</th>
+                    <th>Skin Color</th>
+                    <th>Eye Color</th>
+                    <th>Birth Year</th>
+                    <th>Gender</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowIndex="rowIndex+1" let-people let-rowData="rowData">
+                <tr (click)="showModalDialog(people)" data-table-row>
+                    <td><img class="characters-img" src="{{imgContructor(people.url)}}"></td>
+                    <td class="name">{{ people.name }}</td>
+                    <td class="height">{{ people.height }}</td>
+                    <td>{{ people.mass }}</td>
+                    <td>{{ people.hair_color }}</td>
+                    <td>{{ people.skin_color }}</td>
+                    <td>{{ people.eye_color }}</td>
+                    <td>{{ people.birth_year }}</td>
+                    <td>{{ people.gender }}</td>
+
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="9">No se han encontrado resultados.</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+<p-dialog header={{character.name}} [(visible)]="displayModal" [modal]="true" [style]="{width: '90%', height: '79%'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div class="films-container">
+        <div *ngFor="let film of films" class="film-box">
+            <div class="content-film">
+                <img class="finds-img" src="../../../assets/img/films/{{film.episode_id}}.jpg">
+                <div class="body-film">
+                    <h3>{{film.title}}</h3>
+                    <ul>
+                        <li><span>Director:</span> {{film.director}}</li>
+                        <li><span>Producer:</span> {{film.producer}}</li>
+                        <li><span>Release Date:</span> {{film.release_date}}</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</p-dialog>

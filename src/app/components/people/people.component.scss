@@ -1,0 +1,115 @@
+div.header-box {
+    background-image: url('/assets/img/header-bg.jpg');
+    margin-bottom: 40px;
+    background-size: cover;
+    background-position: center center;
+    padding: 25px;
+    border-bottom: 8px solid #bdc3c7;
+    div.logo-container {
+        text-align: center;
+        img.logo {
+            width: 300px;
+            text-align: center;
+        }
+    }
+}
+
+.flex-conatiner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.p-datatable .p-datatable-thead>tr>th {
+    text-align: left;
+    padding: 1rem 1rem;
+    border: 1px solid #007fff;
+    border-width: 0 0 1px 0;
+    font-weight: 700;
+    color: #ffffff;
+    background: #000000;
+    transition: box-shadow 0.2s;
+}
+
+div.table-box {
+    width: 80%;
+    td.name {
+        font-weight: 600;
+    }
+    margin-bottom: 30px;
+}
+
+.characters-img {
+    width: 50px;
+    border-radius: 100%;
+}
+
+div.flex {
+    display: flex;
+    input#search {
+        flex: 1;
+        margin-right: 10px;
+    }
+    button.btn-search {
+        border: none;
+        height: 47px;
+        padding: 10px 20px 10px 20px;
+        border-radius: 4px;
+        background-color: #2f2f2f;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+div.films-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    overflow: auto;
+    flex-direction: row;
+    margin-top: 20px;
+    div.film-box {
+        width: 280px;
+        &:last-child {
+            margin-right: 1px;
+        }
+        div.content-film {
+            text-align: center;
+            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #00000008;
+            border-radius: 2px;
+            background-color: #fff;
+            min-height: 495px;
+            margin-bottom: 20px;
+            img.finds-img {
+                width: 100%;
+                height: 300px;
+                object-fit: fill;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+            }
+            div.body-film {
+                padding: 0px 15px 15px 15px;
+                ul {
+                    padding: 0px 8px 8px 8px;
+                    list-style: none;
+                    text-align: left;
+                    li {
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
